@@ -16,9 +16,6 @@ ${urlTest}    http://practice.automationtesting.in/
 ${BROWSER}                  Chrome
 ${SELENIUM}                 http://practice.automationtesting.in/
 
-${constante.login.fieldRegisterEmail}  hajartaouiltest@gmail.com
-${constante.login.fieldRegisterPassword}  Test12345!
-
 
 *** Keywords ***
 
@@ -26,8 +23,10 @@ ${constante.login.fieldRegisterPassword}  Test12345!
 
 regiter test
     homePage.click on the myAccount button
-    loginPage.register  fieldRegisterEmail  fieldRegisterPassword
+    loginPage.register    hajartaouil1test@gmail.com    TestOGG12345!@hajartaouiltest1998
     loginPage.Click register
+    
+    
 
 
 

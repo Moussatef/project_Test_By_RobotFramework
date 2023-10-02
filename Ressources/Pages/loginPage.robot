@@ -22,11 +22,7 @@ register
     Utils.input in Web Element  locator=${xpath.fieldRegisterEmail}  timeout=5s  text=${username}
     Utils.input in Web Element  locator=${xpath.fieldRegisterPassword}  timeout=5s  text=${password}
 
-login
-    [Arguments]  ${username}  ${password}
-    Utils.input in Web Element  locator=${xpath.userNameInput}  timeout=5s  text=${username}
-    Utils.input in Web Element  locator=${xpath.passwordInput}  timeout=5s  text=${password}
-    
+
 
 Click register
     Utils.click Web Element  locator=${xpath.registerButton}  timeout=20s 
