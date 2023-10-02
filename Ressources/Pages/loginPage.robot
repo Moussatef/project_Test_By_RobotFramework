@@ -4,34 +4,31 @@ Resource    ../../Ressources/Utils/Utils.robot
 
 *** Variables ***
 
-${xpath.userNameInput}     //input[@id='username']
-${xpath.passwordInput}     //input[@id='password']
-${xpath.resetButton}    //a[@id= "log-in"]
-${xpath.remembermeCheckBox}    //input[ @class = "form-check-input"]
+
+${xpath.fieldRegisterEmail}    //input[@id='reg_email']
+${xpath.fieldRegisterPassword}    //input[@id='reg_password']
+${xpath.registerButton}    //input[@value='Register']
+
+${xpath.fieldLoginUserName}    //input[contains(@name,'username')]
+${xpath.fieldLoginPassword}    /input[@id='password']"
+${xpath.loginButton}    //input[@type='submit' and @name='login']
 
 
-${constante.login.username}  test
-${constante.login.password}  password
 
 *** Keywords ***
+
+register
+    [Arguments]  ${username}  ${password}
+    Utils.input in Web Element  locator=${xpath.fieldRegisterEmail}  timeout=5s  text=${username}
+    Utils.input in Web Element  locator=${xpath.fieldRegisterPassword}  timeout=5s  text=${password}
 
 login
     [Arguments]  ${username}  ${password}
     Utils.input in Web Element  locator=${xpath.userNameInput}  timeout=5s  text=${username}
     Utils.input in Web Element  locator=${xpath.passwordInput}  timeout=5s  text=${password}
+    
+
+Click register
+    Utils.click Web Element  locator=${xpath.registerButton}  timeout=20s 
 
 
-
-Click rememberme
-    Utils.click Web Element  locator=${xpath.remembermeCheckBox}  timeout=5s
-
-
-Click Login
-    Utils.click Web Element  locator=${xpath.resetButton}  timeout=5s
-
-loginTest
-    [Arguments]  ${username}  ${password}
-    loginPage.login  ${username}  ${password}
-    loginPage.Click rememberme
-    SeleniumLibrary.Capture Page Screenshot  filename=InputDone.png
-    loginPage.Click Login

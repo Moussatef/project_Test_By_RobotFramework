@@ -1,184 +1,430 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.8.0 on win32)" generated="20230930 20:04:17.878" rpa="false" schemaversion="4">
-<suite id="s1" name="testSuite" source="C:\Users\omoussat\Desktop\Formation_Test\ProjectForTest\by_robotFramework\Suites\REC\testSuite.robot">
-<test id="s1-t1" name="shopping test" line="23">
+<robot generator="Robot 6.1.1 (Python 3.8.0 on win32)" generated="20231002 14:59:03.964" rpa="false" schemaversion="4">
+<suite id="s1" name="testSuite" source="C:\Formation\Git1-RBF\project_Test_By_RobotFramework\Suites\REC\testSuite.robot">
+<test id="s1-t1" name="regiter test" line="27">
 <kw name="ouvrir navigateur" library="Setup_Teardown" type="SETUP">
 <arg>url=${urlTest}</arg>
 <kw name="Log To Console" library="BuiltIn">
 <arg>message=Oppening ${url}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230930 20:04:18.060" endtime="20230930 20:04:18.060"/>
+<status status="PASS" starttime="20231002 14:59:04.587" endtime="20231002 14:59:04.589"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>url=about:blank</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230930 20:04:18.061" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<msg timestamp="20230930 20:04:21.245" level="WARN">The chromedriver version (116.0.5845.96) detected in PATH at C:\Python38\Scripts\chromedriver.exe might not be compatible with the detected chrome version (117.0.5938.92); currently, chromedriver 117.0.5938.92 is recommended for chrome 117.*, so it is advised to delete the driver in PATH and retry</msg>
-<status status="PASS" starttime="20230930 20:04:18.061" endtime="20230930 20:04:22.887"/>
+<msg timestamp="20231002 14:59:04.591" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20231002 14:59:04.589" endtime="20231002 14:59:11.923"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230930 20:04:22.888" level="INFO">Opening url 'http://practice.automationtesting.in/'</msg>
-<status status="PASS" starttime="20230930 20:04:22.887" endtime="20230930 20:04:37.072"/>
+<msg timestamp="20231002 14:59:11.924" level="INFO">Opening url 'http://practice.automationtesting.in/'</msg>
+<status status="PASS" starttime="20231002 14:59:11.923" endtime="20231002 14:59:18.387"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230930 20:04:37.073" endtime="20230930 20:04:37.222"/>
+<status status="PASS" starttime="20231002 14:59:18.387" endtime="20231002 14:59:18.552"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:18.059" endtime="20230930 20:04:37.223"/>
+<status status="PASS" starttime="20231002 14:59:04.586" endtime="20231002 14:59:18.553"/>
 </kw>
-<kw name="click on the shop button" library="homePage">
+<kw name="click on the myAccount button" library="homePage">
 <kw name="click Web Element" library="Utils">
-<arg>locator=${xpath.shopButton}</arg>
-<arg>timeout=5</arg>
+<arg>locator=${xpath.goToMyAccount}</arg>
+<arg>timeout=10</arg>
 <kw name="Log To Console" library="BuiltIn">
 <arg>message=clique sur l'element : ${locator}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230930 20:04:37.230" endtime="20230930 20:04:37.232"/>
+<status status="PASS" starttime="20231002 14:59:18.564" endtime="20231002 14:59:18.568"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230930 20:04:37.233" endtime="20230930 20:04:37.341"/>
+<status status="PASS" starttime="20231002 14:59:18.569" endtime="20231002 14:59:18.828"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230930 20:04:37.344" level="INFO">Clicking element '//li[@id='menu-item-40']/a'.</msg>
-<status status="PASS" starttime="20230930 20:04:37.342" endtime="20230930 20:04:45.662"/>
+<msg timestamp="20231002 14:59:18.838" level="INFO">Clicking element '//a[contains(text(),'My Account')]'.</msg>
+<status status="PASS" starttime="20231002 14:59:18.830" endtime="20231002 14:59:22.813"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:37.229" endtime="20230930 20:04:45.662"/>
+<status status="PASS" starttime="20231002 14:59:18.557" endtime="20231002 14:59:22.814"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:37.228" endtime="20230930 20:04:45.662"/>
+<status status="PASS" starttime="20231002 14:59:18.555" endtime="20231002 14:59:22.814"/>
 </kw>
-<kw name="click on add to basket" library="ShopPage">
-<kw name="Scroll en bas" library="Utils">
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0, window.scrollY+500)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230930 20:04:45.665" level="INFO">Executing JavaScript:
-window.scrollTo(0, window.scrollY+500)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230930 20:04:45.664" endtime="20230930 20:04:45.670"/>
-</kw>
-<status status="PASS" starttime="20230930 20:04:45.663" endtime="20230930 20:04:45.670"/>
-</kw>
-<kw name="click Web Element" library="Utils">
-<arg>locator=${xpath.addToCardButton}</arg>
-<arg>timeout=5</arg>
+<kw name="register" library="loginPage">
+<arg>fieldRegisterEmail</arg>
+<arg>fieldRegisterPassword</arg>
+<kw name="input in Web Element" library="Utils">
+<arg>locator=${xpath.fieldRegisterEmail}</arg>
+<arg>timeout=5s</arg>
+<arg>text=${username}</arg>
 <kw name="Log To Console" library="BuiltIn">
-<arg>message=clique sur l'element : ${locator}</arg>
+<arg>message=Saisie du text : ${text} sur l'element ${locator}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230930 20:04:45.671" endtime="20230930 20:04:45.672"/>
+<status status="PASS" starttime="20231002 14:59:22.818" endtime="20231002 14:59:22.819"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230930 20:04:45.672" endtime="20230930 20:04:45.703"/>
+<status status="PASS" starttime="20231002 14:59:22.820" endtime="20231002 14:59:22.849"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
+<kw name="Input Text" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230930 20:04:45.707" level="INFO">Clicking element '//a[@href='/shop/?add-to-cart=169']'.</msg>
-<status status="PASS" starttime="20230930 20:04:45.705" endtime="20230930 20:04:45.782"/>
+<arg>text=${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 14:59:22.851" level="INFO">Typing text 'fieldRegisterEmail' into text field '//input[@id='reg_email']'.</msg>
+<status status="PASS" starttime="20231002 14:59:22.850" endtime="20231002 14:59:23.676"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:45.670" endtime="20230930 20:04:45.782"/>
+<status status="PASS" starttime="20231002 14:59:22.817" endtime="20231002 14:59:23.677"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230930 20:04:47.790" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230930 20:04:45.782" endtime="20230930 20:04:47.790"/>
-</kw>
-<status status="PASS" starttime="20230930 20:04:45.663" endtime="20230930 20:04:47.790"/>
-</kw>
-<kw name="click on the start shopping button" library="homePage">
-<kw name="click Web Element" library="Utils">
-<arg>locator=${xpath.startShopping}</arg>
-<arg>timeout=5</arg>
+<kw name="input in Web Element" library="Utils">
+<arg>locator=${xpath.fieldRegisterPassword}</arg>
+<arg>timeout=5s</arg>
+<arg>text=${password}</arg>
 <kw name="Log To Console" library="BuiltIn">
-<arg>message=clique sur l'element : ${locator}</arg>
+<arg>message=Saisie du text : ${text} sur l'element ${locator}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230930 20:04:47.794" endtime="20230930 20:04:47.795"/>
+<status status="PASS" starttime="20231002 14:59:23.678" endtime="20231002 14:59:23.679"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230930 20:04:47.796" endtime="20230930 20:04:47.816"/>
+<status status="PASS" starttime="20231002 14:59:23.679" endtime="20231002 14:59:23.707"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
+<kw name="Input Text" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230930 20:04:47.817" level="INFO">Clicking element '//li[@id='wpmenucartli']/a'.</msg>
-<status status="PASS" starttime="20230930 20:04:47.816" endtime="20230930 20:04:50.900"/>
+<arg>text=${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 14:59:23.709" level="INFO">Typing text 'fieldRegisterPassword' into text field '//input[@id='reg_password']'.</msg>
+<status status="PASS" starttime="20231002 14:59:23.708" endtime="20231002 14:59:24.091"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:47.793" endtime="20230930 20:04:50.901"/>
+<status status="PASS" starttime="20231002 14:59:23.677" endtime="20231002 14:59:24.091"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:47.792" endtime="20230930 20:04:50.901"/>
+<status status="PASS" starttime="20231002 14:59:22.815" endtime="20231002 14:59:24.091"/>
 </kw>
-<kw name="click on remove from basket" library="ShopPage">
+<kw name="Click register" library="loginPage">
 <kw name="click Web Element" library="Utils">
-<arg>locator=${xpath.removeProductButton}</arg>
-<arg>timeout=5</arg>
+<arg>locator=${xpath.registerButton}</arg>
+<arg>timeout=20s</arg>
 <kw name="Log To Console" library="BuiltIn">
 <arg>message=clique sur l'element : ${locator}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230930 20:04:50.902" endtime="20230930 20:04:50.903"/>
+<status status="PASS" starttime="20231002 14:59:24.094" endtime="20231002 14:59:24.096"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230930 20:04:50.903" endtime="20230930 20:04:50.923"/>
+<status status="PASS" starttime="20231002 14:59:24.097" endtime="20231002 14:59:24.151"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230930 20:04:50.924" level="INFO">Clicking element '//td[@class='product-remove']/a'.</msg>
-<status status="PASS" starttime="20230930 20:04:50.924" endtime="20230930 20:04:51.001"/>
+<msg timestamp="20231002 14:59:24.153" level="INFO">Clicking element '//input[@value='Register']'.</msg>
+<status status="PASS" starttime="20231002 14:59:24.151" endtime="20231002 14:59:24.404"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:50.902" endtime="20230930 20:04:51.002"/>
+<status status="PASS" starttime="20231002 14:59:24.093" endtime="20231002 14:59:24.404"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:50.901" endtime="20230930 20:04:51.002"/>
+<status status="PASS" starttime="20231002 14:59:24.092" endtime="20231002 14:59:24.404"/>
 </kw>
 <kw name="fermer navigateur" library="Setup_Teardown" type="TEARDOWN">
 <kw name="Log To Console" library="BuiltIn">
 <arg>message=closing browser</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230930 20:04:51.005" endtime="20230930 20:04:51.007"/>
+<status status="PASS" starttime="20231002 14:59:24.409" endtime="20231002 14:59:24.414"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230930 20:04:51.261" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230930 20:04:51.007" endtime="20230930 20:04:51.261"/>
+<msg timestamp="20231002 14:59:25.192" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231002 14:59:24.415" endtime="20231002 14:59:25.193"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230930 20:04:51.262" endtime="20230930 20:04:53.548"/>
+<status status="PASS" starttime="20231002 14:59:25.193" endtime="20231002 14:59:28.059"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:51.004" endtime="20230930 20:04:53.548"/>
+<status status="PASS" starttime="20231002 14:59:24.407" endtime="20231002 14:59:28.059"/>
 </kw>
-<status status="PASS" starttime="20230930 20:04:18.059" endtime="20230930 20:04:53.549"/>
+<status status="PASS" starttime="20231002 14:59:04.584" endtime="20231002 14:59:28.061"/>
+</test>
+<test id="s1-t2" name="shopping test" line="34">
+<kw name="ouvrir navigateur" library="Setup_Teardown" type="SETUP">
+<arg>url=${urlTest}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message=Oppening ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231002 14:59:28.073" endtime="20231002 14:59:28.076"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=about:blank</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231002 14:59:28.079" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20231002 14:59:28.077" endtime="20231002 14:59:34.279"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231002 14:59:34.280" level="INFO">Opening url 'http://practice.automationtesting.in/'</msg>
+<status status="PASS" starttime="20231002 14:59:34.279" endtime="20231002 14:59:38.296"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20231002 14:59:38.312" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</msg>
+<msg timestamp="20231002 14:59:38.334" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</msg>
+<status status="FAIL" starttime="20231002 14:59:38.297" endtime="20231002 14:59:38.351"/>
+</kw>
+<status status="FAIL" starttime="20231002 14:59:28.070" endtime="20231002 14:59:38.352"/>
+</kw>
+<kw name="fermer navigateur" library="Setup_Teardown" type="TEARDOWN">
+<kw name="Log To Console" library="BuiltIn">
+<arg>message=closing browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231002 14:59:38.362" endtime="20231002 14:59:38.393"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231002 14:59:38.547" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</msg>
+<msg timestamp="20231002 14:59:38.558" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</msg>
+<status status="FAIL" starttime="20231002 14:59:38.435" endtime="20231002 14:59:38.575"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231002 14:59:38.576" endtime="20231002 14:59:41.138"/>
+</kw>
+<status status="FAIL" starttime="20231002 14:59:38.358" endtime="20231002 14:59:41.139">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</status>
+</kw>
+<status status="FAIL" starttime="20231002 14:59:28.067" endtime="20231002 14:59:41.140">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+
+
+Also teardown failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</status>
 </test>
 <doc>ce fichier nous aide à faire executer un test</doc>
-<status status="PASS" starttime="20230930 20:04:17.881" endtime="20230930 20:04:53.553"/>
+<status status="FAIL" starttime="20231002 14:59:03.969" endtime="20231002 14:59:41.155"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="testSuite">testSuite</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="testSuite">testSuite</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230930 20:04:21.245" level="WARN">The chromedriver version (116.0.5845.96) detected in PATH at C:\Python38\Scripts\chromedriver.exe might not be compatible with the detected chrome version (117.0.5938.92); currently, chromedriver 117.0.5938.92 is recommended for chrome 117.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20231002 14:59:38.312" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</msg>
+<msg timestamp="20231002 14:59:38.547" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.89)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7544078A2+54818]
+	(No symbol) [0x00007FF754376AD2]
+	(No symbol) [0x00007FF75422DA3B]
+	(No symbol) [0x00007FF75420DEE8]
+	(No symbol) [0x00007FF754293237]
+	(No symbol) [0x00007FF7542A6C6F]
+	(No symbol) [0x00007FF75428E883]
+	(No symbol) [0x00007FF754263691]
+	(No symbol) [0x00007FF7542648D4]
+	GetHandleVerifier [0x00007FF75476B9A2+3610402]
+	GetHandleVerifier [0x00007FF7547C1870+3962352]
+	GetHandleVerifier [0x00007FF7547B9D5F+3930847]
+	GetHandleVerifier [0x00007FF7544A3656+693206]
+	(No symbol) [0x00007FF754381638]
+	(No symbol) [0x00007FF75437D944]
+	(No symbol) [0x00007FF75437DA72]
+	(No symbol) [0x00007FF75436E123]
+	BaseThreadInitThunk [0x00007FFD1E6853E0+16]
+	RtlUserThreadStart [0x00007FFD1F82485B+43]
+</msg>
 </errors>
 </robot>

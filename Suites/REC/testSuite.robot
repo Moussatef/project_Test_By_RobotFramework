@@ -4,6 +4,7 @@ Resource    ../../Config/Setup_Teardown.robot
 Resource    ../../Ressources/Utils/Utils.robot
 Resource    ../../Ressources/Pages/ShopPage.robot
 Resource    ../../Ressources/Pages/homePage.robot
+Resource    ../../Ressources/Pages/loginPage.robot
 Library    String
 Documentation    ce fichier nous aide à faire executer un test
 Test Setup    Setup_Teardown.ouvrir navigateur  url=${urlTest}
@@ -15,9 +16,19 @@ ${urlTest}    http://practice.automationtesting.in/
 ${BROWSER}                  Chrome
 ${SELENIUM}                 http://practice.automationtesting.in/
 
+${constante.login.fieldRegisterEmail}  hajartaouiltest@gmail.com
+${constante.login.fieldRegisterPassword}  Test12345!
+
+
 *** Keywords ***
 
 *** Test Cases ***
+
+regiter test
+    homePage.click on the myAccount button
+    loginPage.register  fieldRegisterEmail  fieldRegisterPassword
+    loginPage.Click register
+
 
 
 shopping test 
