@@ -5,10 +5,17 @@ Library    String
 
 *** Variables ***
 ${xpath.header}    //h6[@id="time"]
-${xpath.first_balance}    //div[@class='element-balances']//descendant::span
-${xpath.Credit}    //div[@class='balance-title' and contains(text(),"Credit Available")]//following::div[1]
-${xpath.due}    //div[@class='balance-title' and contains(text(),"Due Today")]//following::div[1]
+
+${xpath.shopButton}    //li[@id='menu-item-40']/a
+
+${xpath.startShopping}    //li[@id='wpmenucartli']/a
 
 *** Keywords ***
+
+click on the shop button
+    Utils.click Web Element  locator=${xpath.shopButton}  timeout=5
+
+click on the start shopping button
+    Utils.click Web Element  locator=${xpath.startShopping}   timeout=5
  
 

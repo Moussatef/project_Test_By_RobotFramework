@@ -2,14 +2,15 @@
 Resource    ImportRessources.robot
 
 *** Variables ***
-
+${EXTENSION_PATH}  file\adguard.crx
     
 *** Keywords ***
 
 ouvrir navigateur
     [Arguments]    ${url}
     Log To Console  message=Oppening ${url}
-    SeleniumLibrary.Open Browser  url=${url}  browser=Chrome
+    Open Browser    url=about:blank    browser=chrome   
+    SeleniumLibrary.Go To    ${url}
     SeleniumLibrary.Maximize Browser Window
 
 fermer navigateur
