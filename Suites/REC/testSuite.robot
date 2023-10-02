@@ -27,9 +27,6 @@ regiter test
     loginPage.Click register
     
     
-
-
-
 shopping test 
     homePage.click on the shop button
     ShopPage.click on add to basket
