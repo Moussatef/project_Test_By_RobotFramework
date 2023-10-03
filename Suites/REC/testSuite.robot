@@ -23,15 +23,24 @@ ${SELENIUM}                 http://practice.automationtesting.in/
 
 regiter test
     homePage.click on the myAccount button
-    loginPage.register    hajartaouil1test@gmail.com    TestOGG12345!@hajartaouiltest1998
+    loginPage.register    username=hajartaouil1tesjhgt@gmail.com    password=TestOGG12345!@hajartaouiltest1998
     loginPage.Click register
+    Sleep  3
     
-    
+login test
+
+    homePage.click on the myAccount button
+    loginPage.login  username=mzili.elmehdi@gmail.com  password=Hola123456?
+    loginPage.click login
+    Sleep  3
+
 shopping test 
     homePage.click on the shop button
     ShopPage.click on add to basket
     homePage.click on the start shopping button
     ShopPage.click on remove from basket
+
+
 
 
     
